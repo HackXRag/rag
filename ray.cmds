@@ -1,0 +1,11 @@
+### Instructions for running SFR-Embedding-Mistral on lambda7
+
+
+### Start the ray cluster
+source ./env.sh
+ray start --head  --num-cpus 16 --num-gpus 2
+
+### Start the vllm server
+nohup python -m vllm.entrypoints.openai.api_server --model Salesforce/SFR-Embedding-Mistral --tensor-parallel-size 1 > vllm.entrypoint.openai.log &
+
+
