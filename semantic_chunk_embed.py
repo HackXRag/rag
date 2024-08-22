@@ -48,7 +48,6 @@ embeddings = OpenAIEmbeddings(model=model,
                                   )
 text_splitter = SemanticChunker(embeddings)
 
-directory='cancer_papers'
 _t = _print("done setting up")
 
 for filepath in glob.glob(os.path.join(directory, "*.txt")):
